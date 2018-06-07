@@ -10,6 +10,9 @@ Cocktail.destroy_all
 
 Cocktail.create(name: "Mojito")
 Cocktail.create(name: "Sex on the Beach")
+Cocktail.create(name: "Beer")
+Cocktail.create(name: "Desperado")
+Cocktail.create(name: "Gin Tonic")
 
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
