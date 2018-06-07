@@ -1,0 +1,10 @@
+<div class="container">
+<h1> <%= @cocktail.name  %> </h1>
+
+
+
+<p>
+  <%=link_to '<i class="fas fa-list-ul"></i>'.html_safe, cocktails_path %>
+  <%=link_to "Go back to all Cocktails!", cocktails_path %>
+</p>
+</div>
