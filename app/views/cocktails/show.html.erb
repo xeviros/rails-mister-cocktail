@@ -4,7 +4,13 @@
 
 
 <p>
-  <%=link_to '<i class="fas fa-list-ul"></i>'.html_safe, cocktails_path %>
-  <%=link_to "Go back to all Cocktails!", cocktails_path %>
+  <%= link_to '<i class="fas fa-list-ul"></i>'.html_safe, cocktails_path %>
+  <%= link_to "Go back to all Cocktails!", cocktails_path %>
 </p>
+
+<p>
+  <%= link_to '<i class="fas fa-plus"></i>'.html_safe, new_cocktail_dose_path(@cocktail) %>
+  <%= link_to "Create a Dose", new_cocktail_dose_path(@cocktail) %>
+</p>
+
 </div>
