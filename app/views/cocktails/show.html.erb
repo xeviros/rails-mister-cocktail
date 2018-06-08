@@ -1,7 +1,35 @@
+
+<% if @cocktail.photo.presence %>
+  <div class="card"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path @cocktail.photo %>')">
+             <div class="card-description">
+            <h1> <%= @cocktail.name  %> </h1>
+            </div>
+  </div>
+<% else %>
+
+  <div class="card"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= image_path('san_francisco.jpg') %>')">
+           <div class="card-description">
+          <h1> <%= @cocktail.name  %> </h1>
+          </div>
+  </div>
+<% end %>
+
+
 <div class="container">
-<h1> <%= @cocktail.name  %> </h1>
+
+
+
 
 <h2><%=@cocktail.name%> details: </h2>
+
+<% if @cocktail.photo.presence %>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 
 <%  @cocktail.doses.each do |dose| %>
   <p> - <%= dose.description %> of <%= dose.ingredient.name %>
@@ -15,15 +43,14 @@
 
 
 
+  <p>
+    <%= link_to '<i class="fas fa-list-ul"></i>'.html_safe, cocktails_path %>
+    <%= link_to "Go back to all Cocktails!", cocktails_path %>
+  </p>
 
-<p>
-  <%= link_to '<i class="fas fa-list-ul"></i>'.html_safe, cocktails_path %>
-  <%= link_to "Go back to all Cocktails!", cocktails_path %>
-</p>
-
-<p>
-  <%= link_to '<i class="fas fa-plus"></i>'.html_safe, new_cocktail_dose_path(@cocktail) %>
-  <%= link_to "Create a Dose", new_cocktail_dose_path(@cocktail) %>
-</p>
+  <p>
+    <%= link_to '<i class="fas fa-plus"></i>'.html_safe, new_cocktail_dose_path(@cocktail) %>
+    <%= link_to "Create a Dose", new_cocktail_dose_path(@cocktail) %>
+  </p>
 
 </div>
