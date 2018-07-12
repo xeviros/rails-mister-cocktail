@@ -29,6 +29,9 @@ module RailsMisterCocktail
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.i18n.available_locales = [:en, :es]
+    config.i18n.default_locale = :en
   end
 end
 
